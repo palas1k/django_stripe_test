@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    {% for item in order%}
+    <li>
+        <p> {{ item.item.name }}</p>
+        <p>Описание товара {{ item.item.description }}</p>
+        <p>Цена {{ item.item.price}} USD</p>
+    </li>
+    {% empty %}
+    {{ "Корзина пустая" }}
+    {% endfor %}
+</ul>
+<p><a href="{% url 'items' %}">{{ 'Вернуться к покупкам' }}</a></p>
+<a href="{% url 'stripe_buy' %}">{{ 'Оплата покупок' }}</a>
+</body>
+</html>
