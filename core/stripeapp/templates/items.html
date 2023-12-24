@@ -17,15 +17,16 @@
     {% empty %}
     {{ "Нет товаров" }}
     {% endfor %}
-  {% if messages %}
+
+    <a href="{% url 'order' %}">{{ 'Перейти в корзину' }}</a>
+    {% if messages %}
     {% for message in messages %}
-        <div class="alert alert-success alert-dismissible fade show">
-            <strong>Success!</strong> {{message}}
-            <button type="button" class="close" data-dismiss="alert">&times;</button>
-        </div>
+    <div class="alert alert-success alert-dismissible fade show">
+        <strong>Success!</strong> {{message}}
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
     {% endfor %}
- {% endif %}
-        <a href="{% url 'order' %}">{{ 'Перейти в корзину' }}</a>
+    {% endif %}
 </ul>
 </body>
 </html>
