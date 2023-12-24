@@ -11,6 +11,7 @@
         <p>{{ item.price }}</p>
         <a href="{% url 'item_to_order' item.id %}">{{ "Добавить в корзину" }}</a>
     </li>
+    <p><a href="{% url 'items' %}">{{ 'Вернуться к покупкам' }}</a></p>
     <a href="{% url 'order' %}">{{ 'Перейти в корзину' }}</a>
   {% if messages %}
     {% for message in messages %}

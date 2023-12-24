@@ -4,8 +4,7 @@ from .views import HomePageView, ItemListView, ItemDetailView, success_view, Ord
     item_to_order, payment_create
 
 urlpatterns = [
-    path('', HomePageView.as_view(), name='home'),
-    path('items/', ItemListView.as_view(), name='items'),
+    path('', ItemListView.as_view(), name='items'),
     path('item/<int:pk>/', ItemDetailView.as_view(), name='item'),
     path('order/', OrderListView.as_view(), name='order'),
     path('to_order/<int:pk>/', item_to_order, name='item_to_order'),
